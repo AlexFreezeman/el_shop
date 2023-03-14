@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "el-shop"
+version = "0.1.0"
+description = ""
+authors = ["AlexFreezeman <winterirk@gmail.com>"]
+readme = "README.md"
+packages = [{include = "el_shop"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
