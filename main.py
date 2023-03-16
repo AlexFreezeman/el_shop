@@ -12,7 +12,7 @@ def main():
 
     print(item1.price)
     print(item2.price)
-
+    print(Item.all)
 
 
 

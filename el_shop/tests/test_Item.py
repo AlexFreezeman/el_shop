@@ -3,11 +3,18 @@ from utils.item import Item
 
 def test_calculate_amount(keyboard):
     assert keyboard.calculate_amount() == 12000
-    item = Item("name", 50, 2)
-    assert item.calculate_amount() == 100
+    item1 = Item("name", 50, 2)
+    assert item1.calculate_amount() == 100
 
 
 def test_apply_discount(keyboard):
-    keyboard.pay_rate = 0.8
-    keyboard.apply_discount()
-    assert keyboard.calculate_amount() == 0.8 * 12000.0
+    assert keyboard.pay_rate == 1
+    item1 = Item("name", 50, 2)
+    item1.pay_rate = 0.8
+    assert item1.apply_discount() == 40.0
+    assert item1.price == 40
+    assert int(item1.calculate_amount()) == 80
+
+
+def test__repr__(keyboard):
+    assert str(keyboard) == "Item(name=клавиатура, price=2400, quantity=5)"
