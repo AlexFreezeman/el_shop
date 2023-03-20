@@ -11,10 +11,8 @@ def test_apply_discount(keyboard):
     assert keyboard.pay_rate == 1
     item1 = Item("name", 50, 2)
     item1.pay_rate = 0.8
-    assert item1.apply_discount() == 40.0
+    assert item1.apply_discount() == None
     assert item1.price == 40
     assert int(item1.calculate_amount()) == 80
 
 
-def test__repr__(keyboard):
-    assert str(keyboard) == "Item(name=клавиатура, price=2400, quantity=5)"

@@ -8,15 +8,8 @@ class Item:
         self.quantity = quantity
         self.all.append(self)
 
-    def __repr__(self) -> str:
-        text = ""
-        for dic in self.__dict__:
-            text += dic + "=" + str(self.__dict__[dic]) + ", "
-        return f"Item({text[:-2]})"
-
     def calculate_amount(self):
         return self.price * self.quantity
 
-    def apply_discount(self):
+    def apply_discount(self) -> None:
         self.price = self.price * self.pay_rate
-        return self.price
