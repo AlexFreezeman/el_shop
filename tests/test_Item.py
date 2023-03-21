@@ -16,3 +16,8 @@ def test_apply_discount(keyboard):
     assert int(item1.calculate_amount()) == 80
 
 
+def test_all_items():
+    item1 = Item('test_1', 10_000, 20)
+    item2 = Item('test_2', 20_000, 5)
+
+    assert Item.all == [item1, item2]
