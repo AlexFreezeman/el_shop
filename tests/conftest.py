@@ -9,6 +9,11 @@ def keyboard():
     return keyboard
 
 
-#@pytest.fixture()
-#def path_csv_file():
-#    return os.sep.join(["tests", "items.csv"])
+@pytest.fixture(autouse=True)
+def clear_items():
+    Item.all = []
+
+
+@pytest.fixture()
+def path_csv():
+    os.sep.join(["tests", "items.csv"])
