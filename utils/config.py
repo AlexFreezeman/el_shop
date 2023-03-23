@@ -1,3 +1,3 @@
 import os
 
-path_csv = os.sep.join(["tests", "items.csv"])
+path_csv = os.path.join('C:\\', 'Users', 'User', 'PycharmProjects', 'el_shop', 'data', "items.csv").replace('\\','/')

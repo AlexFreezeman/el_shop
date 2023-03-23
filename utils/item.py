@@ -1,5 +1,4 @@
 import csv
-import os
 
 
 class Item:
@@ -35,10 +34,9 @@ class Item:
                and (round(number) == number)
 
     @classmethod
-    def instantiate_from_csv(cls, path_csv: str) -> None:
-        with open(path_csv, "r", newline='') as file:
+    def instantiate_from_csv(cls, path_csv) -> None:
+        with open(path_csv, "r", newline="") as file:
             csv_data = csv.DictReader(file)
             item_list = []
             for row in csv_data:
                 item_list.append(cls(row['name'], int(row['price']), int(row['quantity'])))
-

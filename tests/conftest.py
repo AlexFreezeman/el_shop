@@ -14,6 +14,6 @@ def clear_items():
     Item.all = []
 
 
-@pytest.fixture()
+@pytest.fixture(autouse=True)
 def path_csv():
-    os.sep.join(["tests", "items.csv"])
+    os.sep.join(["data", "items.csv"])
