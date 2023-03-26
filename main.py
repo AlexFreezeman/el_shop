@@ -7,8 +7,8 @@ def main():
     item1.name = "Смартфон"
     print(item1.name)
 
-    item2 = Item("Смартфон", 20000, 3)
-#    item2.name = "СуперСмартфон"
+ #   item2 = Item("Смартфон", 20000, 3) #вкл для проверки Exception
+ #   item2.name = "СуперСмартфон" #вкл для проверки Exception
 
     Item.instantiate_from_csv(path_csv)  # создание объектов из данных файла
     print(len(Item.all))  # в файле 5 записей с данными по товарам
