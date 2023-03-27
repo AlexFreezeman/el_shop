@@ -40,7 +40,7 @@ def test_is_integer():
 
 
 def test_instantiate_from_csv():
-    Item.instantiate_from_csv(path_csv)
+    Item.instantiate_from_csv('../data/items.csv')
     assert len(Item.all) == 5
     assert Item.all[0].name == "Смартфон"
     assert Item.all[4].name == "Клавиатура"
