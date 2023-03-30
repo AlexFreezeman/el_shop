@@ -1,4 +1,4 @@
-/venv/
+el_shop\venv\
 .idea
 .pytest_cache
 .coverage
