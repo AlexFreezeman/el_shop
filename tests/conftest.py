@@ -16,4 +16,4 @@ def clear_items():
 
 @pytest.fixture(autouse=True)
 def path_csv():
-    os.sep.join(["data", "items.csv"])
+    os.path.join('data', 'items.csv')
