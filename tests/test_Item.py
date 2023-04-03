@@ -45,3 +45,12 @@ def test_instantiate_from_csv():
     assert Item.all[0].name == "Смартфон"
     assert Item.all[4].name == "Клавиатура"
 
+
+def test__repr__():
+    assert repr(Item("Ноутбук", 1000, 3)) == "Item(_Item__name=Ноутбук, price=1000, quantity=3)"
+    assert repr(Item("Смартфон", 100, 1)) == "Item(_Item__name=Смартфон, price=100, quantity=1)"
+
+
+def test__str__():
+    assert str(Item("Ноутбук", 1000, 3)) == "Товар: Ноутбук, цена: 1000, количество: 3"
+    assert str(Item("Смартфон", 100, 1)) == "Товар: Смартфон, цена: 100, количество: 1"

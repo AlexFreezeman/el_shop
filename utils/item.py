@@ -40,3 +40,12 @@ class Item:
             item_list = []
             for row in csv_data:
                 item_list.append(cls(row['name'], int(row['price']), int(row['quantity'])))
+
+    def __repr__(self) -> str:
+        text = "Item("
+        for dic in self.__dict__:
+            text += f'{dic}={self.__dict__[dic]}, '
+        return f"{text[:-2]})"
+
+    def __str__(self) -> str:
+        return f"Товар: {self.__name}, цена: {self.price}, количество: {self.quantity}"
