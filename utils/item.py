@@ -49,3 +49,40 @@ class Item:
 
     def __str__(self) -> str:
         return f"Товар: {self.__name}, цена: {self.price}, количество: {self.quantity}"
+
+
+class Phone(Item):
+    def __init__(self, name="", price=0.0, quantity=0, number_of_sim=1):
+        Item.__init__(self, name, price, quantity)
+        self._number_of_sim = number_of_sim
+        self.name = name
+        if number_of_sim == 0:
+            raise ValueError("Количество физических SIM-карт должно быть целым числом больше нуля.")
+
+    @staticmethod
+    def add_item(data1, data2):
+        if (isinstance(data1, Phone) or isinstance(data1, Item)) and \
+                (isinstance(data2, Phone) or isinstance(data2, Item)):
+            return data1.quantity + data2.quantity
+        else:
+            raise (ValueError, "Объекты должны быть типа Phone или Item")
+
+    def __repr__(self) -> str:
+        text = "Phone("
+        for dic in self.__dict__:
+            text += f'{dic}={self.__dict__[dic]}, '
+        return f"{text[:-2]})"
+
+    def __str__(self) -> str:
+        return f"Телефон: {self.name}, цена: {self.price}, количество: {self.quantity}, количество сим-карт: {self._number_of_sim}"
+
+    @property
+    def number_of_sim(self):
+        return self._number_of_sim
+
+    @number_of_sim.setter
+    def number_of_sim(self, number: int):
+        if isinstance(number, int) and number > 0:
+            self._number_of_sim = number
+        else:
+            raise ValueError("Количество физических SIM-карт должно быть целым числом больше нуля.")
