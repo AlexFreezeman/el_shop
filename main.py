@@ -37,5 +37,6 @@ def main():
     Phone('iPhone 14', 120000, 5, 2)
     # phone1.number_of_sim = 0
 
+
 if __name__ == "__main__":
     main()
