@@ -53,7 +53,7 @@ class Item:
 
 class Phone(Item):
     def __init__(self, name="", price=0.0, quantity=0, number_of_sim=1):
-        Item.__init__(self, name, price, quantity)
+        super().__init__(name, price, quantity)
         self._number_of_sim = number_of_sim
         self.name = name
         if number_of_sim == 0:
