@@ -1,4 +1,5 @@
 from utils.item import Item, Phone
+from utils.keyboard import KeyBoard
 from utils.config import path_csv
 
 
@@ -31,11 +32,21 @@ def main():
     # print(Item.is_integer(5.5))
 
     # смартфон iPhone 14, цена 120_000, количетсво товара 5, симкарт 2
-    phone1 = Phone("iPhone 14", 120_000, 5, 2)
-    print(phone1)
-    print(repr(phone1))
-    Phone('iPhone 14', 120000, 5, 2)
+#    phone1 = Phone("iPhone 14", 120_000, 5, 2)
+#    print(phone1)
+#    print(repr(phone1))
+#    Phone('iPhone 14', 120000, 5, 2)
     # phone1.number_of_sim = 0
+
+    kb = KeyBoard('Dark Project KD87A', 9600, 5)
+    # kb = KeyBoard('Dark', 9600, 5)
+    print(kb)
+    print(kb.language)
+    kb.change_lang()
+    print(kb.language)
+    kb.change_lang()
+    print(kb.language)
+#    kb.language = 'CH'
 
 
 if __name__ == "__main__":
