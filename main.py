@@ -47,7 +47,7 @@ def main():
     kb.change_lang()
     print(kb.language)
 #    kb.language = 'CH'
-
+    print(kb.__repr__())
 
 if __name__ == "__main__":
     main()
